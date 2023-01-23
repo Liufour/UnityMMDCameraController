@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class SampleControl : MonoBehaviour
+public class SimpleControl : MonoBehaviour
 {
     private Animator charaAnimator;
     MMD4MCameraController cameraController;
@@ -22,15 +22,15 @@ public class SampleControl : MonoBehaviour
 
     }
 }
-[CanEditMultipleObjects, CustomEditor(typeof(SampleControl))]
-public class CustomEditorTestEditorSampleControl : Editor
+[CanEditMultipleObjects, CustomEditor(typeof(SimpleControl))]
+public class CustomEditorTestEditorSimpleControl : Editor
 {
     public override void OnInspectorGUI()
     {
         base.DrawDefaultInspector();
         if (GUILayout.Button("Play"))
         {
-            SampleControl sc = (SampleControl)target;
+            SimpleControl sc = (SimpleControl)target;
             sc.PlayMotion();
         }
     }
